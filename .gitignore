@@ -1,0 +1,54 @@
+# Logs e arquivos de debug
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências instaladas
+node_modules
+pnpm-lock.yaml
+yarn.lock
+
+# Arquivos de build e distribuição
+dist
+build
+out
+tmp
+temp
+/tmp
+
+# Arquivos de configuração do ambiente local
+.config
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor e IDE específicos
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Arquivos gerados por ferramentas de teste
+coverage
+junit.xml
+
+# Arquivos de pacote (geralmente não versionados)
+package-lock.json
+
+# Outros arquivos que podem ser ignorados
+.history
+*.orig
+*.pyc
+__pycache__/
