@@ -11,8 +11,10 @@ app.get("/", (req, res) => {
 
 app.get("/favicon.ico", (req, res) => res.status(204));
 
-const chatRoutes = require("./routes/chat");
+const chatRoutes = require("./api/routes/chat");
+const userRoutes = require("./api/routes/userRoutes");
 const { connect } = require("mongoose");
 app.use("/chat", chatRoutes);
+app.use("/", userRoutes);
 
 app.listen(port, () => console.log(`App running on http://localhost:${port}`));
