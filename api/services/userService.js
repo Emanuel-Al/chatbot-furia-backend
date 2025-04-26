@@ -27,4 +27,16 @@ async function createUser(data) {
   return await newUser.save();
 }
 
-module.exports = { createUser };
+async function deleteUser(id) {
+  try {
+    const user = await User.findByIdAndDelete(id);
+    if (!user) {
+      throw new Error("Usuário não encontrado");
+    }
+    return user;
+  } catch (err) {
+    throw new Error("Erro ao deletar usuário: " + err.message);
+  }
+}
+
+module.exports = { createUser, deleteUser };
