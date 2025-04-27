@@ -10,5 +10,6 @@ router.get("/users", async (req, res) => {
   res.json(users);
 });
 
+router.put("/users/:id", userController.update);
 router.delete("/users/:id", userController.remove);
 module.exports = router;
