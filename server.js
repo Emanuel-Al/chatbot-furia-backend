@@ -2,6 +2,7 @@ require("dotenv").config();
 const connectDb = require("./config/db");
 const app = require("./config/express")();
 const port = app.get("port");
+const passport = require("./config/passport");
 
 connectDb();
 
@@ -16,5 +17,6 @@ const userRoutes = require("./api/routes/userRoutes");
 const { connect } = require("mongoose");
 app.use("/chat", chatRoutes);
 app.use("/", userRoutes);
+app.use(passport.initialize());
 
 app.listen(port, () => console.log(`App running on http://localhost:${port}`));
