@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 function checkAuth(req, res, next) {
   const token =
-    req.headers["authorization"] && req.headers["authorization"].split("")[1];
+    req.headers["authorization"] && req.headers["authorization"].split(" ")[1];
   if (!token) {
     return res.status(401).json({ message: "token não encontrado" });
   }
