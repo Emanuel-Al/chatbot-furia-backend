@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 const connectDb = require("./config/db");
 const app = require("./config/express")();
 const port = app.get("port");
@@ -9,6 +10,12 @@ connectDb();
 app.get("/", (req, res) => {
   res.send("Setup");
 });
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
 app.get("/favicon.ico", (req, res) => res.status(204));
 
